@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://dhclavie.github.io//github/sitemap.xml 
