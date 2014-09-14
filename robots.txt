@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: samueldeng.com/sitemap.xml 
