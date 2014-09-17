@@ -1,0 +1,343 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Sy",
+				"SysMenuBarView"
+			],
+			[
+				"tpl",
+				"template"
+			],
+			[
+				"sys",
+				"SysMenuBarView"
+			],
+			[
+				"h",
+				"Handlebars"
+			],
+			[
+				"menu",
+				"menuBarTpl"
+			],
+			[
+				"Ba",
+				"backbone"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 506,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\nbody {\n	text-align: center;\n}\n\n.container  {\n    margin: 0 auto;\n    max-width: 960px;\n    padding: 60px 15px;\n}\n\n.sidebar {\n   float:right;\n   witdh:30%;\n}\n\n.main {\n    float:left;\n    witdh:690%;\n    padding:10px;\n};\n\n.blog-name{\n}\n",
+			"file": "css/blog.css",
+			"file_size": 235,
+			"file_write_time": 1410684265000000,
+			"settings":
+			{
+				"buffer_size": 235,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_includes/header.html",
+			"settings":
+			{
+				"buffer_size": 1108,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2014-09-14-css-base.markdown",
+			"settings":
+			{
+				"buffer_size": 1241,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Create Package File"
+			],
+			[
+				"in",
+				"Package Control: Create Binary Package File"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/apple/Project/blog/_layouts/default.html",
+		"/Users/apple/Project/blog/index.html",
+		"/Users/apple/Project/blog/blog.sublime-project",
+		"/Users/apple/Project/blog/Rakefile",
+		"/Users/apple/Project/blog/_config.yml",
+		"/Users/apple/Project/blog/source/_posts/2014-09-09-blog-reopen-using-jekyll.markdown",
+		"/Users/apple/Project/calimanme.com/www/hbs/login.hbs",
+		"/Users/apple/Project/calimanme.com/www/hbs/index.hbs",
+		"/Users/apple/Project/calimanme.com/www/hbs/register.hbs",
+		"/Users/apple/Desktop/aa.tar",
+		"/Users/apple/Project/calimanme.com/www/js/common.js",
+		"/Users/apple/Desktop/todo.js",
+		"/Users/apple/Project/calimanme.com/www/hbs/sys_menu_bar.hbs",
+		"/Users/apple/Desktop/bgpb",
+		"/Users/apple/Github/bbclonemail/public/javascripts/bbclonemail/bbclonemail.js",
+		"/Users/apple/Github/bbclonemail/public/javascripts/bbclonemail/components/appController.js",
+		"/Users/apple/Github/bbclonemail/public/javascripts/bbclonemail/components/appSelector.js",
+		"/Users/apple/Project/calimanme.com/www/js/app/controller/menubar.js",
+		"/Users/apple/Project/calimanme.com/www/js/app/view/index.js",
+		"/Users/apple/Project/calimanme.com/www/js/app/main.js",
+		"/Users/apple/Project/calimanme.com/app.js",
+		"/Users/apple/Project/calimanme.com/package.json",
+		"/Users/apple/Project/calimanme.com/www/hbs/sys_menu_bar.hbs.html",
+		"/Users/apple/Github/Js/example-multipage-shim/www/page1.html",
+		"/Users/apple/Github/Js/example-multipage-shim/tools/build.js",
+		"/Users/apple/Github/Js/example-multipage-shim/tools/r.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/lib.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/main1.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/page2.html",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/common.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/model/m1.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/model/Base.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/controller/c1.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/controller/Base.js",
+		"/Users/apple/Github/Js/example-multipage-shim/www/js/app/controller/c2.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"aside",
+			"markdown"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 506,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/blog.css",
+					"settings":
+					{
+						"buffer_size": 235,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_includes/header.html",
+					"settings":
+					{
+						"buffer_size": 1108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								151,
+								151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_posts/2014-09-14-css-base.markdown",
+					"settings":
+					{
+						"buffer_size": 1241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								726,
+								726
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 976.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 191.0,
+	"status_bar_visible": true
+}
