@@ -5,9 +5,139 @@
     <description></description>
     <link>http://dhclavie.com/</link>
     <atom:link href="http://dhclavie.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 21 Sep 2014 00:45:32 +0800</pubDate>
-    <lastBuildDate>Sun, 21 Sep 2014 00:45:32 +0800</lastBuildDate>
+    <pubDate>Wed, 24 Sep 2014 00:33:43 +0800</pubDate>
+    <lastBuildDate>Wed, 24 Sep 2014 00:33:43 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>Mysql设置Master和Slave同步</title>
+        <description>&lt;h2 id=&quot;mysqlmasterslave&quot;&gt;Mysql设置Master和Slave同步&lt;/h2&gt;
+
+&lt;h4 id=&quot;mysql&quot;&gt;工作2年都没有自己做过mysql的主从配置，平时使用的比较多，今天有个服务要用到，就写来记录下，下面的操作基于这个环境：&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Centos 7
+Mysql Ver 14.14 Distrib 5.1.73
+Master IP 假设为 10.10.10.1
+Slave IP 假设为 10.10.10.2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;master&quot;&gt;配置Master&lt;/h3&gt;
+&lt;p&gt;#### 1.打开mysql的配置文件
+	vim /etc/mysql.my.conf&lt;/p&gt;
+
+&lt;h4 id=&quot;mysqld&quot;&gt;2.设置绑定地址，这个参数在[mysqld]下面&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;bind-address=10.10.10.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;dbidslave&quot;&gt;3.修改db服务ID，待会也需要设置slave的，必须和这里的不一样&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sever-id = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;binlog&quot;&gt;4.设置binlog文件的位置&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;log_bin = /var/log/mysql/mysql-bin.log
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;dbbinlog&quot;&gt;5.设置那个db要记录binlog&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;binlog_do_db = db_to_replication
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;mysqld-1&quot;&gt;6.重启mysqld&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;service mysqld restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;mysqlslaveslaveroot123&quot;&gt;7.登陆mysql,设置slave访问的权限,slave的账户也使用root,密码为123（假设）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;GRANT REPLICATION SLAVE ON *.* TO &#39;root&#39;@&#39;10.10.10.2&#39; IDENTIFIED BY &#39;123&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;8.进去要同步的库&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;use db_to_replication;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;dbtoreplication&quot;&gt;9.锁定db_to_replication，以免有数据进入，如果当前没有服务接入可以跳过这步。&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;FLUSH TABLES WITH READ LOCK;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;mastermysqlmariadbmysql----positionfilefilebinlogpostitonslave&quot;&gt;10.查看Master的状态（注意，mysql新版本都叫mariadb，mysql被卖了 - -!)，记录position和file，等下会用到，其实这里的file为binlog文件，postiton为slave要开始执行同步的位置。&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;MariaDB [db_to_replication]&amp;gt; show master status;
++------------------+----------+--------------+------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
++------------------+----------+--------------+------------------+
+| mysql-bin.000002 | 1234     | db_to_replication|              |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;masterslave&quot;&gt;11.导出Master要同步的库，等下Slave需要用到。&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mysqldump -u root -p --opt db_to_replication &amp;gt; db_to_replication.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;dbtoreplication8&quot;&gt;12.恢复db_to_replication，如果刚才没有执行第8步，那这里就不需要恢复了&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;UNLOCK TABLES;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;master-1&quot;&gt;13.退出，Master配置完成。&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;quit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;slave&quot;&gt;设置Slave&lt;/h3&gt;
+&lt;p&gt;#### 1.创建db_to_replication库
+	create database db_to_replication;&lt;/p&gt;
+
+&lt;h4 id=&quot;masterdbtoreplication&quot;&gt;2.导入上面在Master导出的db_to_replication库&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mysql -u root -p db_to_replication &amp;lt; /path/to/db_to_replication.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;mysql-1&quot;&gt;3.打开mysql的配置文件&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;vim /etc/mysql.my.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;dbidmaster&quot;&gt;4.修改db服务ID,要和Master不一样&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sever-id = 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;binlog-1&quot;&gt;5.binlog的日志的位置&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;relay-log = /var/log/mysql/mysql-relay-bin.log
+log_bin = /var/log/mysql/mysql-bin.log
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;dbbinlog-1&quot;&gt;6.设置那个db要记录binlog&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;binlog_do_db = db_to_replication
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;relay&quot;&gt;7.relay相关文件位置&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;relay_log = /var/lib/mysql/mysql-relay-bin
+relay-log-index = /var/lib/mysql/relay-bin.index
+relay-log-info-file = /var/lib/mysql/relay-bin.info
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;mysql-2&quot;&gt;8.重启mysql服务&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;service mysqld restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;mysqlmasterbinlogroot456logmaster10&quot;&gt;9.进入mysql，设置Master的信息,假设发送binlog的用户为root，密码为456，log文件名和开始同步的位置为设置Master中第10步记录的。&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;CHANGE MASTER TO MASTER_HOST=&#39;10.10.10.1&#39;,MASTER_USER=&#39;root&#39;,
+MASTER_PASSWORD=&#39;456&#39;,MASTER_LOG_FILE=&#39;mysql-bin.000002&#39;, MASTER_LOG_POS=1234;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;slave-1&quot;&gt;10.开启Slave&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;START SLAVE;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;masterslave-1&quot;&gt;现在往Master插入一条数据就会发生同步到Slave，其他修改也是。&lt;/h3&gt;
+</description>
+        <pubDate>Mon, 15 Sep 2014 00:46:33 +0800</pubDate>
+        <link>http://dhclavie.com/blog/mysql-master-slave</link>
+        <guid isPermaLink="true">http://dhclavie.com/blog/mysql-master-slave</guid>
+        
+        
+        <category>post</category>
+        
+        <category>mysql</category>
+        
+        <category>master</category>
+        
+        <category>slave</category>
+        
+        <category>replication</category>
+        
+      </item>
     
       <item>
         <title>Base CSS</title>
@@ -135,27 +265,6 @@
         <category>post</category>
         
         <category>css</category>
-        
-      </item>
-    
-      <item>
-        <title>CAS单点登陆以及COOKIE和session管理</title>
-        <description>
-</description>
-        <pubDate>Mon, 15 Sep 2014 00:46:33 +0800</pubDate>
-        <link>http://dhclavie.com/blog/cookie-session-cas</link>
-        <guid isPermaLink="true">http://dhclavie.com/blog/cookie-session-cas</guid>
-        
-        
-        <category>post</category>
-        
-        <category>web</category>
-        
-        <category>cookie</category>
-        
-        <category>session</category>
-        
-        <category>cas</category>
         
       </item>
     

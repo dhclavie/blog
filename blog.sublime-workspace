@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"sess",
+				"session_name"
+			],
+			[
+				"se",
+				"serviceValidate"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Rs",
+				"RegisterController"
+			],
+			[
+				"L",
+				"LOGIN_STATE_CHANGE"
+			],
+			[
+				"re",
+				"retcode"
+			],
+			[
+				"Log",
+				"LoginController"
+			],
+			[
+				"Lo",
+				"LoginController"
+			],
+			[
+				"lO",
+				"LoginController"
+			],
+			[
+				"WWW",
+				"WWWView"
+			],
+			[
+				"_par",
+				"_params"
+			],
+			[
 				"Sy",
 				"SysMenuBarView"
 			],
@@ -31,41 +79,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 506,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "\nbody {\n	text-align: center;\n}\n\n.container  {\n    margin: 0 auto;\n    max-width: 960px;\n    padding: 60px 15px;\n}\n\n.sidebar {\n   float:right;\n   witdh:30%;\n}\n\n.main {\n    float:left;\n    witdh:690%;\n    padding:10px;\n};\n\n.blog-name{\n}\n",
-			"file": "css/blog.css",
-			"file_size": 235,
-			"file_write_time": 1410684265000000,
-			"settings":
-			{
-				"buffer_size": 235,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_includes/header.html",
-			"settings":
-			{
-				"buffer_size": 1108,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_posts/2014-09-14-css-base.markdown",
-			"settings":
-			{
-				"buffer_size": 1241,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -99,6 +112,32 @@
 	},
 	"file_history":
 	[
+		"/Users/apple/Project/blog/_posts/2014-09-23-mysql-master-slave.md",
+		"/Users/apple/Project/calimanme.com/www/app.js",
+		"/Users/apple/Project/calimanme.com/www/lib/cas_client.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/menubar/controller/menubar.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/menubar/model/menubarmodel.js",
+		"/Users/apple/Project/calimanme.com/www/www/hbs/sys_menu_bar.hbs",
+		"/Users/apple/Project/calimanme.com/www/package.json",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/main.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/www_manager.js",
+		"/Users/apple/Project/calimanme.com/console/www/js/common.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/controller/resetpassword.js",
+		"/Users/apple/Project/calimanme.com/www/www/hbs/register.hbs",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/model/register.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/controller/register.js",
+		"/Users/apple/Project/calimanme.com/www/www/hbs/resetpassword.hbs",
+		"/Users/apple/Project/calimanme.com/www/www/hbs/login.hbs",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/view/resetpassword.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/view/register.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/controller/master.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/controller/login.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/view/login.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/model/login.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/view/www.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/model/www.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/model/resetpassword.js",
+		"/Users/apple/Project/calimanme.com/www/www/js/app/content/controller/www.js",
 		"/Users/apple/Project/blog/_layouts/default.html",
 		"/Users/apple/Project/blog/index.html",
 		"/Users/apple/Project/blog/blog.sublime-project",
@@ -170,115 +209,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 506,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1,
-								1
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "css/blog.css",
-					"settings":
-					{
-						"buffer_size": 235,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								87,
-								87
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_includes/header.html",
-					"settings":
-					{
-						"buffer_size": 1108,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								151,
-								151
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_posts/2014-09-14-css-base.markdown",
-					"settings":
-					{
-						"buffer_size": 1241,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								726,
-								726
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 976.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -288,7 +220,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -334,10 +266,10 @@
 		],
 		"width": 0.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 191.0,
+	"side_bar_width": 252.0,
 	"status_bar_visible": true
 }

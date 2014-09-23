@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+		{
+			"path": "_includes"
+		},
+		{
+			"path": "_layouts"
+		},
+		{
+			"path": "_posts"
+		},
+		{
+			"path": "_sass"
+		},
+		{
+			"path": "_scripts"
+		},
+		{
+			"path": "_site"
+		},
+		{
+			"path": "fonts"
+		},
+		{
+			"path": "css"
+		}
+	]
+}
