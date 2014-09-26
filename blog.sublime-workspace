@@ -86,6 +86,14 @@
 				"buffer_size": 1120,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "_posts/2014-09-26-node-module.md",
+			"settings":
+			{
+				"buffer_size": 162,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -217,7 +225,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -232,8 +240,35 @@
 						"selection":
 						[
 							[
-								579,
-								579
+								94,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_posts/2014-09-26-node-module.md",
+					"settings":
+					{
+						"buffer_size": 162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
 							]
 						],
 						"settings":
