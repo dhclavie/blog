@@ -10,6 +10,7 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/syntax.css">
     <link rel="canonical" href="http://dhclavie.com/blog/css-base">
 
 
@@ -70,22 +71,19 @@
 <ul>
   <li>行内式，直接在标记的style属性里面设置css样式</li>
   <li>嵌入式，在head标签内写css代码</li>
-  <li>链接式</li>
+  <li>
+    <p>链接式</p>
+
+    <link href="xxxx" rel="stylesheet" type="text/css" />
+  </li>
+  <li>
+    <p>导入式</p>
+
+    <style type="text/css">
+      @import "mystlcs.css"
+  </style>
+  </li>
 </ul>
-
-<p><code>
-        &lt;link href="xxxx" rel="stylesheet" type="text/css" /&gt;
-</code></p>
-
-<ul>
-  <li>导入式</li>
-</ul>
-
-<p><code>
-        &lt;style type="text/css"&gt;
-            @import "mystlcs.css"
-        &lt;/style&gt;
-</code></p>
 
 <h3 id="css-1">基本CSS选择器</h3>
 
@@ -95,25 +93,23 @@
   <li>标记选择器：试用html标签来设置样式</li>
 </ul>
 
-<p><code>
-	h1{color:red;}
-</code></p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">h1</span><span class="p">{</span><span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;}</span></code></pre></div>
 
 <ul>
   <li>类别选择器</li>
 </ul>
 
-<p><code>
-		.red{xxxxx}
-</code></p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nc">.red</span><span class="p">{</span>
+<span class="lineno">2</span>         <span class="n">xxxxx</span>
+<span class="lineno">3</span>      <span class="p">}</span></code></pre></div>
 
 <ul>
   <li>ID选择器</li>
 </ul>
 
-<p><code>
-		#id{xxxxxxx}
-</code></p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nf">#id</span><span class="p">{</span>
+<span class="lineno">2</span>         <span class="n">xxxxxxx</span>
+<span class="lineno">3</span>     <span class="p">}</span></code></pre></div>
 
 <h3 id="section">复合选择器</h3>
 
@@ -123,25 +119,25 @@
   <li>交集选择器：由两个选择器直接连接构成，其结果是选中二者各自元素范围的交集。</li>
 </ul>
 
-<p><code>
-		h3.calss{xxxx}
-</code></p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">h3</span><span class="nc">.class</span><span class="p">{</span>
+<span class="lineno">2</span>         <span class="n">xxxx</span>
+<span class="lineno">3</span>     <span class="p">}</span></code></pre></div>
 
 <ul>
   <li>并集选择器：选中多个选择器所选择的范围的组合，通过逗号连接。</li>
 </ul>
 
-<p><code>
-		h2,h3{xxxxxxx}
-</code></p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">h2</span><span class="o">,</span><span class="nt">h3</span><span class="p">{</span>
+<span class="lineno">2</span>         <span class="n">xxxxxxx</span>
+<span class="lineno">3</span>     <span class="p">}</span></code></pre></div>
 
 <ul>
   <li>后代选择器：对内层元素进行设置样式，外层标记写在前面，内层标记写在后面，使用空格分隔。</li>
 </ul>
 
-<p><code>
-		p h1{ddddddd}
-</code></p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">p</span> <span class="nt">h1</span><span class="p">{</span>
+<span class="lineno">2</span>         <span class="n">ddddddd</span>
+<span class="lineno">3</span>     <span class="p">}</span></code></pre></div>
 
 <h3 id="css-2">CSS的层叠特性</h3>
 

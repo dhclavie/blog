@@ -5,8 +5,8 @@
     <description></description>
     <link>http://dhclavie.com/</link>
     <atom:link href="http://dhclavie.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 26 Sep 2014 20:56:01 +0800</pubDate>
-    <lastBuildDate>Fri, 26 Sep 2014 20:56:01 +0800</lastBuildDate>
+    <pubDate>Fri, 03 Oct 2014 01:18:38 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Oct 2014 01:18:38 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
@@ -388,22 +388,19 @@ MASTER_PASSWORD=&#39;456&#39;,MASTER_LOG_FILE=&#39;mysql-bin.000002&#39;, MASTER
 &lt;ul&gt;
   &lt;li&gt;行内式，直接在标记的style属性里面设置css样式&lt;/li&gt;
   &lt;li&gt;嵌入式，在head标签内写css代码&lt;/li&gt;
-  &lt;li&gt;链接式&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;链接式&lt;/p&gt;
+
+    &lt;link href=&quot;xxxx&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导入式&lt;/p&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+      @import &quot;mystlcs.css&quot;
+  &lt;/style&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;
-        &amp;lt;link href=&quot;xxxx&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;导入式&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;
-        &amp;lt;style type=&quot;text/css&quot;&amp;gt;
-            @import &quot;mystlcs.css&quot;
-        &amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;css-1&quot;&gt;基本CSS选择器&lt;/h3&gt;
 
@@ -413,25 +410,23 @@ MASTER_PASSWORD=&#39;456&#39;,MASTER_LOG_FILE=&#39;mysql-bin.000002&#39;, MASTER
   &lt;li&gt;标记选择器：试用html标签来设置样式&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-	h1{color:red;}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;类别选择器&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-		.red{xxxxx}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;xxxxx&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;ID选择器&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-		#id{xxxxxxx}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;xxxxxxx&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;section&quot;&gt;复合选择器&lt;/h3&gt;
 
@@ -441,25 +436,25 @@ MASTER_PASSWORD=&#39;456&#39;,MASTER_LOG_FILE=&#39;mysql-bin.000002&#39;, MASTER
   &lt;li&gt;交集选择器：由两个选择器直接连接构成，其结果是选中二者各自元素范围的交集。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-		h3.calss{xxxx}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;xxxx&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;并集选择器：选中多个选择器所选择的范围的组合，通过逗号连接。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-		h2,h3{xxxxxxx}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;xxxxxxx&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;后代选择器：对内层元素进行设置样式，外层标记写在前面，内层标记写在后面，使用空格分隔。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-		p h1{ddddddd}
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;lineno&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;2&lt;/span&gt;         &lt;span class=&quot;n&quot;&gt;ddddddd&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;3&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;css-2&quot;&gt;CSS的层叠特性&lt;/h3&gt;
 
