@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Git Base</title>
+    <title>Node Buffer对象</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/syntax.css">
-    <link rel="canonical" href="http://dhclavie.com/blog/git-base">
+    <link rel="canonical" href="http://dhclavie.com/2014-10-12-node-buffer.html">
 
 
 
@@ -65,78 +65,30 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Git Base</h1>
-    <p class="post-meta">Sep 25, 2014</p>
+    <h1 class="post-title">Node Buffer对象</h1>
+    <p class="post-meta">Oct 13, 2014</p>
   </header>
 
   <article class="post-content">
-    <h2 id="git-base">Git Base</h2>
+    <p>Node提高的buffer对象，实际上是一个二进制数组，占用的内存使用堆分配，没有使用V8的垃圾回收机制。这个对象所在的模块由node启动的时候加载，不需要required，可以直接使用。/Volumes/ExpansionDrive2T/A/FSET439.avi</p>
 
-<h3 id="gitgit">假设你已经安装了git，下面是一下git的基本配置和操作，每次做一个项目都网上找一遍，这次写在这里，下次不用找了:)</h3>
+<h3 id="singleton-in-javascript">Singleton in Javascript</h3>
 
-<h4 id="section">初始化一个项目</h4>
-<pre><code>git init
-</code></pre>
+<p>function Logger(){
+        if(Logger.instance){
+                    Logger.instance = this;
+                        }
+                            return Logger.instance;
+}</p>
 
-<h4 id="section-1">设置提交和修改的作者信息</h4>
-<pre><code>git config --global user.name "John Doe"
-git config --global user.email "John@xxx.com"
-其中--global 可以设置为--system, --global or --file，范围影响为从整个系统，当前账户，和当前项目
-</code></pre>
+<h3 id="factory-in-javascript">Factory in Javascript</h3>
 
-<h4 id="logstatus">设置log和status的颜色高亮</h4>
-<pre><code>git config --global color.ui true
-</code></pre>
+<p>SELECT host FROM mysql.user WHERE User = ‘root’;
+GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’;
+FLUSH PRIVILEGES;</p>
 
-<h4 id="commit">设置commit时使用的编辑器</h4>
-<pre><code>git config --global core.editor vim 
-</code></pre>
+<p>bind-address        = 0.0.0.0</p>
 
-<h4 id="section-2">设置解决合并冲突时使用哪种差异分析工具</h4>
-<pre><code>git config --global merge.tool vimdiff
-</code></pre>
-
-<h4 id="section-3">设置命令别名，修改为个人喜好，</h4>
-<pre><code>git config --global alias.co checkout
-git config --global alias.cm commit
-git config --global alias.st status
-git config --global alias.br branch
-</code></pre>
-
-<h4 id="section-4">查看配置信息</h4>
-<pre><code>git config --list
-</code></pre>
-
-<h4 id="git-">将文件添加到git 库</h4>
-<pre><code>git add
-</code></pre>
-
-<h4 id="commit-1">添加commit</h4>
-<pre><code>git commit
-git commit -am "comm内容" 添加文件和commit一并完成
-</code></pre>
-
-<h4 id="section-5">创建分支</h4>
-<pre><code>git branch branch-name
-</code></pre>
-
-<h4 id="section-6">切换分支</h4>
-<pre><code>git checkout branch-name
-</code></pre>
-
-<h4 id="section-7">将当前项目和一个远程库关联</h4>
-<pre><code>git remote add origin https://xxxxxx/xxxx.git
-</code></pre>
-
-<h4 id="section-8">讲一个本地分支和一个远程库关联</h4>
-<pre><code>git push -u origin branch-name
-</code></pre>
-
-<h4 id="gitignore">创建.gitignore文件屏蔽不需要管理的文件或者自动生成的文件</h4>
-<pre><code>例如：下面为忽略所有so和o文件
-	*.so
-	*.o
-</code></pre>
 
   </article>
 
