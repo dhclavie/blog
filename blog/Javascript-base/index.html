@@ -1,109 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Record my days of life.!">
+    <title>dhc.la.vie - Blogging about stuffs</title>
+    <meta name="description" content="dhclavie.com" />
 
-    <title>Base Javascript - dhc.la.vie</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="canonical" href="http://dhclavie.com/blog/Javascript-base">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Custom Fonts -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
 
 </head>
+<body class="post-template">
 
-
-<body>
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">dhc.la.vie</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                
-                <li>
-                    <a href="/about.html">About</a>
-                </li>
-                
-                <li>
-                    
-                </li>
-                
-                <li>
-                    
-                </li>
-                
-                <li>
-                    
-                </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-
-    <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/2014-10-03-Javascript-base.md.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Base Javascript</h1>
-                    
-                    <span class="meta">Posted by samueldeng on October 4, 2014</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/rss.xml">Subscribe</a>
+    </nav>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<main class="content" role="main">
 
-				<h2 id="javascript-">Javascript 基础</h2>
+    <article class="post">
 
-<p>1.访问一个不存在的变量或者没有赋值的变量，得到undefined</p>
+        <header class="post-header">
+            <h1 class="post-title">Base Javascript</h1>
+            <section class="post-meta">                
+                <time class="post-date" datetime="2014-10-04">04 Oct 2014</time>
+                 
+                    on post and javascript 
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="http://feeds.feedburner.com/Dhclavie">
+                
+                    <span class="blog-title">dhc.la.vie</span>
+                 
+            </a>
+        </header> -->
+        
+        <!-- <span class="post-meta">
+            <time datetime="2014-10-04">04 Oct 2014</time>
+             
+                on post and javascript 
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Base Javascript</h1> -->
+
+        <section class="post-content">
+            <p>1.访问一个不存在的变量或者没有赋值的变量，得到undefined</p>
 
 <p>2.null变量不是undefined，这个变量有值，是一个特殊的object，值为为null</p>
 
@@ -211,90 +166,79 @@ to the objects this constructor produces.
 
 <p>23.prototype依附的属性会在new操作之后拷贝到对象上面，对对象属性的修改不会影响到prototype上面的属性。</p>
 
+        </section>
 
-                <hr>
+        
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="//blog/node-module" data-toggle="tooltip" data-placement="top" title="Node Module">&larr; Previous Post</a> 
-                    </li>
-                     
-                    
-                    <li class="next">
-                        <a href="//blog/apple_swift_language_base" data-toggle="tooltip" data-placement="top" title="Apple Swift Language Base">Next Post &rarr;</a>
-                    </li>
-                     
-                </ul>
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png.jpg)">
+                    <span class="hidden">dhclavie's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> dhclavie </h4>
+                    <!-- Author Bio -->
+                    <p> 
+                        上海-码农-云计算-IOS-WEB 
+                    </p>
+                </section>                
+            
 
-            </div>
-        </div>
-    </div>
-</article>
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Base Javascript&amp;url=http://dhclavie.com/blog/Javascript-base"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://dhclavie.com/blog/Javascript-base"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://dhclavie.com/blog/Javascript-base"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+            
+            <!-- Disqus comments -->
+            
+            
+        </footer>
 
-<hr>
+    </article>
 
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="/feed.xml">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="https://twitter.com/denghuancong">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="https://www.facebook.com/denghuancong">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="https://github.com/dhclavie">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; dhc.la.vie 2014</p>
-            </div>
-        </div>
-    </div>
-</footer>
+</main>
 
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">dhc.la.vie</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll 
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
 
-<!-- Custom Theme JavaScript -->
-<script src="/js/clean-blog.min.js "></script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+      _gaq.push(['_trackPageview']);
 
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
+    </script>   
 </body>
-
 </html>

@@ -31,11 +31,11 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Apple Swift Language Base</h1>
+            <h1 class="post-title">Welcome to Jekyll!</h1>
             <section class="post-meta">                
-                <time class="post-date" datetime="2014-10-19">19 Oct 2014</time>
+                <time class="post-date" datetime="2013-11-10">10 Nov 2013</time>
                  
-                    on post, swift, and apple 
+                    on thriller, comedy, and horror 
                 
             </section>
         </header>
@@ -49,73 +49,28 @@
         </header> -->
         
         <!-- <span class="post-meta">
-            <time datetime="2014-10-19">19 Oct 2014</time>
+            <time datetime="2013-11-10">10 Nov 2013</time>
              
-                on post, swift, and apple 
+                on thriller, comedy, and horror 
             
         </span> -->
 
-        <!-- <h1 class="post-title">Apple Swift Language Base</h1> -->
+        <!-- <h1 class="post-title">Welcome to Jekyll!</h1> -->
 
         <section class="post-content">
-            <h4 id="section">1.变量和常量</h4>
+            <p>You’ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
 
-<pre><code>let定义常量，var定义变量	
-赋值市会隐含定义类型，swift不会隐含修改变量的类型，需要修改，必须明确指定。
-字符串拼接使用加号（+），或者直接在字符串字面量前面使用\() 
-创建数组或者字典使用[]
-</code></pre>
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-<h4 id="section-1">2.控制流</h4>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
+<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></div>
 
-<pre><code>条件控制 if switch， switch 里面的case无需明确break，默认会break，但必须有default
-循环使用for, for in , while , do while
-使用..&lt; 或者...在循环中指定一个范围，后者为包括
-</code></pre>
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll’s GitHub repo</a>.</p>
 
-<h4 id="section-2">3.函数和闭包</h4>
-
-<pre><code>函数使用func定义，可以返回多个值，函数调用使用括号，参数必须指定类型
-func(a:Int  , b:Int ) -&gt; String {} 接受2个int类型，返回一个字符串
-函数参数可以为可变参数，在类型后面加...
-函数体可以继续定义函数
-在swift，函数本质上是一个简单的闭包
-</code></pre>
-
-<h4 id="section-3">4.对象和类</h4>
-
-<pre><code>class 后面接类名定义类
-使用类名+括号创建对象，调用对象方法使用.操作符
-构成函数使用init定义
-析构函数使用deinit定义
-在类函数里使用self访问对象成员
-继承使用:
-重写子类方法使用override指定
-属性可以具有set，get方法，set方法默认传递的参数名称为newValue，可以修改，在set后面加括号指明参数名称即可，无	需指定类型
-可以给属性添加willSet和didSet指定赋值前或者赋值后的逻辑
-可以配合？指定选项变量，当对象为nil时，语句后面的操作不会执行
-选项变量为在变量类型前面加？，定义为选项变量，后面引用都比较有？号
-</code></pre>
-
-<h4 id="section-4">5.结构和枚举类型</h4>
-<pre><code>enum定义枚举类型，可以为enum类型提高函数，但这里的枚举类型不需要值，c/c++中的枚举类型本质为unsigned，
-但这里的枚举类型为一个名称，我想应该是一种对象吧。可以在里面定义方法，并进行访问，而且枚举类型和类不一样，
-不需要实例化。
-
-struct定义结构，结构可以定义构造函数和方法，属性，但和类不一样的是结构使用值传递，类使用引用传递，这个
-和传统语言类似
-</code></pre>
-
-<h4 id="protocolsextensions">6.协议和扩展（protocols，extensions）</h4>
-
-<pre><code>使用protocol定义一个协议,协议里面的只可以写方法声明或者属性声明，不能写body
-mutating func定义个协议方法，也就是定义一个接口吧，继承者必须实现。	使用extension扩展一个存在的类型
-</code></pre>
-
-<h4 id="generics">7.Generics（怎么叫？应该是模板吧）</h4>
-
-<pre><code>使用&lt;&gt;指定类型，具体使用case by case
-</code></pre>
 
         </section>
 
@@ -141,15 +96,15 @@ mutating func定义个协议方法，也就是定义一个接口吧，继承者�
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Apple Swift Language Base&amp;url=http://dhclavie.com/blog/apple_swift_language_base"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Welcome to Jekyll!&amp;url=http://dhclavie.com/blog/welcome-to-jekyll"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://dhclavie.com/blog/apple_swift_language_base"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://dhclavie.com/blog/welcome-to-jekyll"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://dhclavie.com/blog/apple_swift_language_base"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://dhclavie.com/blog/welcome-to-jekyll"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>

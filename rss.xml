@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>dhc.la.vie</title>
+    <link>http://feeds.feedburner.com/Dhclavie</link>
+    <description>Blogging about stuffs</description>
+    <pubDate>Wed, 22 Oct 2014 08:40:33 +0800</pubDate>
+    <item>
+      <title>一致性Hash</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/consistent_hashing</link>
+      <description>&lt;pre&gt;&lt;code&gt;去年工作的时候听大智慧的架构师的演讲，第一次听到一致性hash这个名词，当时没听明白，
+后面工作没联系到这个东西，后来也没去追查了，但了今年，听存储的同事的演讲，
+也听到这个名词，然后就有了这篇文章。
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+      <pubDate>Wed, 22 Oct 2014 08:40:33 +0800</pubDate>
+      <dc:date>2014-10-22T08:40:33+08:00</dc:date>
+    </item>
+    <item>
+      <title>Apple Swift Language Base</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/apple_swift_language_base</link>
+      <description>&lt;h4 id=&quot;section&quot;&gt;1.变量和常量&lt;/h4&gt;
+
+</description>
+      <pubDate>Sun, 19 Oct 2014 08:53:20 +0800</pubDate>
+      <dc:date>2014-10-19T08:53:20+08:00</dc:date>
+    </item>
+    <item>
+      <title>Base Javascript</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/Javascript-base</link>
+      <description>&lt;p&gt;1.访问一个不存在的变量或者没有赋值的变量，得到undefined&lt;/p&gt;
+
+</description>
+      <pubDate>Sat, 04 Oct 2014 07:40:33 +0800</pubDate>
+      <dc:date>2014-10-04T07:40:33+08:00</dc:date>
+    </item>
+    <item>
+      <title>Node Module</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/node-module</link>
+      <description>&lt;p&gt;这篇文章介绍如何编写Node模块，node模块遵循commonjs标准，实现起来非常简单，下面简单实现一个maths的模块, 在macosx下编写。&lt;/p&gt;
+
+</description>
+      <pubDate>Fri, 26 Sep 2014 19:09:08 +0800</pubDate>
+      <dc:date>2014-09-26T19:09:08+08:00</dc:date>
+    </item>
+    <item>
+      <title>Git Base</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/git-base</link>
+      <description>&lt;h4 id=&quot;gitgit&quot;&gt;假设你已经安装了git，下面是一下git的基本配置和操作，每次做一个项目都网上找一遍，这次写在这里，下次不用找了:)&lt;/h4&gt;
+
+</description>
+      <pubDate>Thu, 25 Sep 2014 19:30:23 +0800</pubDate>
+      <dc:date>2014-09-25T19:30:23+08:00</dc:date>
+    </item>
+    <item>
+      <title>Mysql设置Master和Slave同步</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/mysql-master-slave</link>
+      <description>&lt;h4 id=&quot;mysql&quot;&gt;工作2年都没有自己做过mysql的主从配置，平时使用的比较多，今天有个服务要用到，就写来记录下，下面的操作基于这个环境：&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Centos 7
+Mysql Ver 14.14 Distrib 5.1.73
+Master IP 假设为 10.10.10.1
+Slave IP 假设为 10.10.10.2
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+      <pubDate>Wed, 24 Sep 2014 07:46:33 +0800</pubDate>
+      <dc:date>2014-09-24T07:46:33+08:00</dc:date>
+    </item>
+    <item>
+      <title>Base CSS</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/css-base</link>
+      <description>&lt;h4 id=&quot;css&quot;&gt;引入CSS的形式&lt;/h4&gt;
+
+</description>
+      <pubDate>Mon, 15 Sep 2014 00:46:33 +0800</pubDate>
+      <dc:date>2014-09-15T00:46:33+08:00</dc:date>
+    </item>
+    <item>
+      <title>Welcome to Jekyll!</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/welcome-to-jekyll</link>
+      <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
+To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+
+</description>
+      <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
+      <dc:date>2013-11-10T18:18:00+08:00</dc:date>
+    </item>
+    <dc:date>2014-10-22T08:40:33+08:00</dc:date>
+  </channel>
+</rss>
