@@ -8,7 +8,28 @@
     <title>dhc.la.vie</title>
     <link>http://feeds.feedburner.com/Dhclavie</link>
     <description>Blogging about stuffs</description>
-    <pubDate>Sat, 25 Oct 2014 09:28:33 +0800</pubDate>
+    <pubDate>Sun, 26 Oct 2014 08:37:33 +0800</pubDate>
+    <item>
+      <title>大型网站架构基础</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/web_server_architecture</link>
+      <description>&lt;pre&gt;&lt;code&gt;上周读了《大型网站技术架构》这本书，总体来说，里面很多重复的内容，而且讲的不够深入，很多都是简单介绍一下，大型网站架构也不是一开始就设置的多么高级，也是由于网站性能，可用性等满足不了当前的情况进而对站点架构进行升级，改正的过程，书里面讲到几个平时比较混淆的概念，这篇就作为读书比较记录下书中想过概念和技术。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;大型网站架构普遍的演变过程&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.应用程序和DB在同一台服务器
+2.应用程序和DB分离
+3.应用程序和DB之间假如缓存层，可以为本地缓存或者为远程缓存（memcached，redis等）
+4.使用lVS+应用程序集群替换单个应用程序改善网站的并发处理能力
+5.数据库改造，数据库读写分离（主-从模式）
+6.在LVS前面，增加反向代理和CDN加速网站响应速度
+7.数据库改造，分库，分表，建立分布式数据库集群
+8.应用程序集群升级为分布式服务
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+      <pubDate>Sun, 26 Oct 2014 08:37:33 +0800</pubDate>
+      <dc:date>2014-10-26T08:37:33+08:00</dc:date>
+    </item>
     <item>
       <title>Rework2 - office not required (重来2)</title>
       <link>http://feeds.feedburner.com/Dhclavie/blog/rework2_remoting_work</link>
@@ -107,6 +128,6 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
       <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
       <dc:date>2013-11-10T18:18:00+08:00</dc:date>
     </item>
-    <dc:date>2014-10-25T09:28:33+08:00</dc:date>
+    <dc:date>2014-10-26T08:37:33+08:00</dc:date>
   </channel>
 </rss>

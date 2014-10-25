@@ -52,6 +52,60 @@
 
     <article class="post">
         <header class="post-header">
+            <h2 class="post-title"><a href="/blog/web_server_architecture">大型网站架构基础</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <pre><code>上周读了《大型网站技术架构》这本书，总体来说，里面很多重复的内容，而且讲的不够深入，很多都是简单介绍一下，大型网站架构也不是一开始就设置的多么高级，也是由于网站性能，可用性等满足不了当前的情况进而对站点架构进行升级，改正的过程，书里面讲到几个平时比较混淆的概念，这篇就作为读书比较记录下书中想过概念和技术。
+</code></pre>
+
+<h4 id="section">大型网站架构普遍的演变过程</h4>
+<pre><code>1.应用程序和DB在同一台服务器
+2.应用程序和DB分离
+3.应用程序和DB之间假如缓存层，可以为本地缓存或者为远程缓存（memcached，redis等）
+4.使用lVS+应用程序集群替换单个应用程序改善网站的并发处理能力
+5.数据库改造，数据库读写分离（主-从模式）
+6.在LVS前面，增加反向代理和CDN加速网站响应速度
+7.数据库改造，分库，分表，建立分布式数据库集群
+8.应用程序集群升级为分布式服务
+</code></pre>
+
+ <a class="read-more" href="/blog/web_server_architecture">&raquo;</a>
+        </section>
+        <footer class="post-meta">
+            
+                <img class="author-thumb" src="/assets/images/profile.png.jpg" alt="Author's profile picture" nopin="nopin" />
+                dhclavie
+            
+             
+                on post, web, and architecture 
+            
+            <time class="post-date" datetime="2014-10-26">
+                26 Oct 2014
+            </time> 
+        </footer>
+    </article>
+
+    <!-- Capser below -->
+<!--     <article class="">
+    <header class="post-header">
+        <h2 class="post-title"><a href="">}</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p> <a class="read-more" href="">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="" alt="Author image" nopin="nopin" />
+        
+        
+        <time class="post-date" datetime=""></time>
+    </footer>
+    </article> -->
+    <!--  -->
+
+    
+
+    <article class="post">
+        <header class="post-header">
             <h2 class="post-title"><a href="/blog/rework2_remoting_work">Rework2 - office not required (重来2)</a></h2>
         </header>
         <section class="post-excerpt">
