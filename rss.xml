@@ -8,7 +8,16 @@
     <title>dhc.la.vie</title>
     <link>http://feeds.feedburner.com/Dhclavie</link>
     <description>Blogging about stuffs</description>
-    <pubDate>Sun, 26 Oct 2014 08:37:33 +0800</pubDate>
+    <pubDate>Sun, 09 Nov 2014 06:18:00 +0800</pubDate>
+    <item>
+      <title>关于Node Buffer对象</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/node-buffer</link>
+      <description>&lt;h5 id=&quot;nodejscprotobufnodepdnpmtmextensionextension90cjavascript&quot;&gt;最近写一个专门为新项目写一个nodejs的c++模块去解释protobuf的消息（名字叫node_pd哈，后面写文章介绍），为何要重新造轮子？因为npm上面都TM没有合适的，试用了两个，一个不支持extension，一个extension解释出问题，然后，然后就打算自己写了，目前准备完成了，90%吧，可以正常在C++和javascript之间解释和生成消息，呃。。。，说了些和主题木有关系东东，算是作为背景吧。&lt;/h5&gt;
+
+</description>
+      <pubDate>Sun, 09 Nov 2014 06:18:00 +0800</pubDate>
+      <dc:date>2014-11-09T06:18:00+08:00</dc:date>
+    </item>
     <item>
       <title>大型网站架构基础</title>
       <link>http://feeds.feedburner.com/Dhclavie/blog/web_server_architecture</link>
@@ -128,6 +137,6 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
       <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
       <dc:date>2013-11-10T18:18:00+08:00</dc:date>
     </item>
-    <dc:date>2014-10-26T08:37:33+08:00</dc:date>
+    <dc:date>2014-11-09T06:18:00+08:00</dc:date>
   </channel>
 </rss>

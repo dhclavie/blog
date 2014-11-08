@@ -5,9 +5,92 @@
     <description>Blogging about stuffs</description>
     <link>http://feeds.feedburner.com/Dhclavie//</link>
     <atom:link href="http://feeds.feedburner.com/Dhclavie//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 26 Oct 2014 00:39:12 +0800</pubDate>
-    <lastBuildDate>Sun, 26 Oct 2014 00:39:12 +0800</lastBuildDate>
+    <pubDate>Sun, 09 Nov 2014 00:45:15 +0800</pubDate>
+    <lastBuildDate>Sun, 09 Nov 2014 00:45:15 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>关于Node Buffer对象</title>
+        <description>&lt;h5 id=&quot;nodejscprotobufnodepdnpmtmextensionextension90cjavascript&quot;&gt;最近写一个专门为新项目写一个nodejs的c++模块去解释protobuf的消息（名字叫node_pd哈，后面写文章介绍），为何要重新造轮子？因为npm上面都TM没有合适的，试用了两个，一个不支持extension，一个extension解释出问题，然后，然后就打算自己写了，目前准备完成了，90%吧，可以正常在C++和javascript之间解释和生成消息，呃。。。，说了些和主题木有关系东东，算是作为背景吧。&lt;/h5&gt;
+
+&lt;p&gt;Node提高的buffer对象，实际上是一个二进制数组，占用的内存使用堆分配，没有使用V8的垃圾回收机制。这个对象所在的模块由node启动的时候加载，不需要required，可以直接使用，一般使用buffer对象来存储二进制数据，多用于网络服务作为缓冲区，好吧，我承认这几句话很废。&lt;/p&gt;
+
+&lt;p&gt;node的buffer对象使用的内存不在v8引擎的管理，是存在于v8内存管理之外的内存空间，代码头文件解释是这么说的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A buffer is a chunk of memory stored outside the V8 heap, mirrored by an object in javascript.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看下代码：
+node-v0.10.32/src/node_buffer.cc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;111 Buffer* Buffer::New(char *data, size_t length,
+112                     free_callback callback, void *hint) {
+113   HandleScope scope;
+114
+115   Local&amp;lt;Value&amp;gt; arg = Integer::NewFromUnsigned(0);
+116   Local&amp;lt;Object&amp;gt; obj = constructor_template-&amp;gt;GetFunction()-&amp;gt;NewInstance(1, &amp;amp;arg);
+117
+118   Buffer *buffer = ObjectWrap::Unwrap&amp;lt;Buffer&amp;gt;(obj);
+119   buffer-&amp;gt;Replace(data, length, callback, hint); 看最后一句，以及下面的最后一句，确实是在系统堆中分配，不在v8的管理。
+
+162 void Buffer::Replace(char *data, size_t length,
+163                      free_callback callback, void *hint) {
+164   HandleScope scope;
+174   length_ = length;
+175   callback_ = callback;
+176   callback_hint_ = hint;
+177
+178   if (callback_) {
+179     data_ = data;
+180   } else if (length_) {
+181     data_ = new char[length_];
+182     if (data)
+183       memcpy(data_, data, length_);
+189   handle_-&amp;gt;SetIndexedPropertiesToExternalArrayData(data_,
+190                                                    kExternalUnsignedByteArray,
+191                                                    length_);
+192   handle_-&amp;gt;Set(length_symbol, Integer::NewFromUnsigned(length_));
+193 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;并且会将内存指针设置在handle_这个v8对象（这是个持久型对象）上面,说白了就是把地址放在这个对象中，。当需要在引用这个buffer对象的数据时，在v8环境中就可以根据这个handle_去获取数据。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;75   static inline char* Data(v8::Handle&amp;lt;v8::Value&amp;gt; val) {
+ 	76     assert(val-&amp;gt;IsObject());
+ 	77     void* data = val.As&amp;lt;v8::Object&amp;gt;()-&amp;gt;GetIndexedPropertiesExternalArrayData();
+ 	78     return static_cast&amp;lt;char*&amp;gt;(data);
+ 	79   }
+ 	80
+ 	81   static inline char* Data(Buffer *b) {
+ 	82     return Buffer::Data(b-&amp;gt;handle_);
+ 	83   } 顺便说下，buffer的对象最大的理论存储空间为0x3fffffff，也就是1G空间。。。
+
+66 class NODE_EXTERN Buffer: public ObjectWrap {
+ 	67  public:
+ 	68   // mirrors deps/v8/src/objects.h
+ 	69   static const unsigned int kMaxLength = 0x3fffffff;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;关于使用&lt;/h4&gt;
+&lt;p&gt;如果想在node c++模块中使用buffer对象，需要引入buffer和node对象wrapper的头文件（node.h，node_buffer.h，node_object_wrap.h）。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;后话&lt;/h4&gt;
+&lt;p&gt;详细使用待研究。。。。。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 09 Nov 2014 06:18:00 +0800</pubDate>
+        <link>http://feeds.feedburner.com/Dhclavie//blog/node-buffer</link>
+        <guid isPermaLink="true">http://feeds.feedburner.com/Dhclavie//blog/node-buffer</guid>
+        
+        
+        <category>node</category>
+        
+        <category>c/c++</category>
+        
+        <category>buffer</category>
+        
+        <category>v8</category>
+        
+      </item>
     
       <item>
         <title>大型网站架构基础</title>
@@ -912,35 +995,6 @@ MASTER_PASSWORD=&#39;456&#39;,MASTER_LOG_FILE=&#39;mysql-bin.000002&#39;, MASTER
         <category>post</category>
         
         <category>css</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
-        <link>http://feeds.feedburner.com/Dhclavie//blog/welcome-to-jekyll</link>
-        <guid isPermaLink="true">http://feeds.feedburner.com/Dhclavie//blog/welcome-to-jekyll</guid>
-        
-        
-        <category>thriller</category>
-        
-        <category>comedy</category>
-        
-        <category>horror</category>
         
       </item>
     
