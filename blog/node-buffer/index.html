@@ -67,8 +67,7 @@
 <pre><code>A buffer is a chunk of memory stored outside the V8 heap, mirrored by an object in javascript.
 </code></pre>
 
-<p>查看下代码：
-node-v0.10.32/src/node_buffer.cc</p>
+<p>查看下代码：node-v0.10.32/src/node_buffer.cc</p>
 
 <pre><code>111 Buffer* Buffer::New(char *data, size_t length,
 112                     free_callback callback, void *hint) {
@@ -78,9 +77,12 @@ node-v0.10.32/src/node_buffer.cc</p>
 116   Local&lt;Object&gt; obj = constructor_template-&gt;GetFunction()-&gt;NewInstance(1, &amp;arg);
 117
 118   Buffer *buffer = ObjectWrap::Unwrap&lt;Buffer&gt;(obj);
-119   buffer-&gt;Replace(data, length, callback, hint); 看最后一句，以及下面的最后一句，确实是在系统堆中分配，不在v8的管理。
+119   buffer-&gt;Replace(data, length, callback, hint);
+</code></pre>
 
-162 void Buffer::Replace(char *data, size_t length,
+<p>看最后一句，以及下面的最后一句，确实是在系统堆中分配，不在v8的管理。</p>
+
+<pre><code>162 void Buffer::Replace(char *data, size_t length,
 163                      free_callback callback, void *hint) {
 164   HandleScope scope;
 174   length_ = length;

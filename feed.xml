@@ -5,8 +5,8 @@
     <description>Blogging about stuffs</description>
     <link>http://feeds.feedburner.com/Dhclavie//</link>
     <atom:link href="http://feeds.feedburner.com/Dhclavie//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Nov 2014 00:46:37 +0800</pubDate>
-    <lastBuildDate>Sun, 09 Nov 2014 00:46:37 +0800</lastBuildDate>
+    <pubDate>Sun, 09 Nov 2014 00:49:07 +0800</pubDate>
+    <lastBuildDate>Sun, 09 Nov 2014 00:49:07 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
@@ -20,8 +20,7 @@
 &lt;pre&gt;&lt;code&gt;A buffer is a chunk of memory stored outside the V8 heap, mirrored by an object in javascript.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;查看下代码：
-node-v0.10.32/src/node_buffer.cc&lt;/p&gt;
+&lt;p&gt;查看下代码：node-v0.10.32/src/node_buffer.cc&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;111 Buffer* Buffer::New(char *data, size_t length,
 112                     free_callback callback, void *hint) {
@@ -31,9 +30,12 @@ node-v0.10.32/src/node_buffer.cc&lt;/p&gt;
 116   Local&amp;lt;Object&amp;gt; obj = constructor_template-&amp;gt;GetFunction()-&amp;gt;NewInstance(1, &amp;amp;arg);
 117
 118   Buffer *buffer = ObjectWrap::Unwrap&amp;lt;Buffer&amp;gt;(obj);
-119   buffer-&amp;gt;Replace(data, length, callback, hint); 看最后一句，以及下面的最后一句，确实是在系统堆中分配，不在v8的管理。
+119   buffer-&amp;gt;Replace(data, length, callback, hint);
+&lt;/code&gt;&lt;/pre&gt;
 
-162 void Buffer::Replace(char *data, size_t length,
+&lt;p&gt;看最后一句，以及下面的最后一句，确实是在系统堆中分配，不在v8的管理。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;162 void Buffer::Replace(char *data, size_t length,
 163                      free_callback callback, void *hint) {
 164   HandleScope scope;
 174   length_ = length;
