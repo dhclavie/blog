@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>dhc.la.vie - Blogging about stuffs</title>
+    <meta name="description" content="dhclavie.com" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="post-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/rss.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Google V8引擎的安装和使用</h1>
+            <section class="post-meta">                
+                <time class="post-date" datetime="2014-11-10">10 Nov 2014</time>
+                 
+                    on post, google, and v8 
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="http://feeds.feedburner.com/Dhclavie">
+                
+                    <span class="blog-title">dhc.la.vie</span>
+                 
+            </a>
+        </header> -->
+        
+        <!-- <span class="post-meta">
+            <time datetime="2014-11-10">10 Nov 2014</time>
+             
+                on post, google, and v8 
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Google V8引擎的安装和使用</h1> -->
+
+        <section class="post-content">
+            <p>最近写的一个模块需要引用Google V8这个库，下面介绍如何安装和使用。（必须翻墙）</p>
+
+<h4 id="section">安装</h4>
+
+<p>根据参考资料1，2，用git下载v8</p>
+
+<pre><code>git clone https://github.com/v8/v8-git-mirror
+</code></pre>
+
+<p>然后进入这个目录，切到master分支，下周依赖库（必须翻墙）</p>
+
+<pre><code>cd v8-git-mirror
+git checkout master
+make dependencies  // 下载依赖库
+</code></pre>
+
+<p>如果成功把依赖都编译好了可以跳过下面这不，我是先在makefile里面把依赖库一个个下载回来再放在合适的目录
+,makefile 里面列出的依赖库如下：</p>
+
+<pre><code>493     svn checkout --force http://gyp.googlecode.com/svn/trunk build/gyp \
+494         --revision 1831
+495     if svn info third_party/icu 2&gt;&amp;1 | grep -q icu46 ; then \
+496       svn switch --force \
+497           https://src.chromium.org/chrome/trunk/deps/third_party/icu52 \
+498           third_party/icu --revision 277999 ; \
+499     else \
+500       svn checkout --force \
+501           https://src.chromium.org/chrome/trunk/deps/third_party/icu52 \
+502           third_party/icu --revision 277999 ; \
+503     fi
+504     svn checkout --force http://googletest.googlecode.com/svn/trunk \
+505         testing/gtest --revision 692
+506     svn checkout --force http://googlemock.googlecode.com/svn/trunk \
+507         testing/gmock --revision 485
+</code></pre>
+
+<p>东西准备好了，下面编译这个库，注意把ibrary=shared 参数加上，把它编译为so库</p>
+
+<pre><code>make native mode=debug library=shared -j2
+</code></pre>
+
+<p>指定native会自动判断你当前系统的架构进行编译，-j2为指定使用2个进程进行编译加快编译速度,编译成功后在v8-git-mirror/out/native/lib.target目录下会出现下面几个文件，</p>
+
+<pre><code>-rwxr-xr-x. 2 root root  2742392 11月  9 11:31 libicui18n.so
+-rwxr-xr-x. 2 root root 12400430 11月  9 11:30 libicuuc.so
+-rwxr-xr-x. 2 root root 12227393 11月  9 11:45 libv8.so
+</code></pre>
+
+<p>使用方式和一般的so一样（可以将so拷贝到系统lib目录或者指定LD_LIBRARY_PATH环境变量）.</p>
+
+<h4 id="section-1">使用</h4>
+
+<p>参考资料中的第三项，将提供代码（可能和下面的有所差别）保存为hw.cc</p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="lineno"> 1</span> <span class="cp">#include &lt;v8.h&gt;</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> 	<span class="n">using</span> <span class="n">namespace</span> <span class="n">v8</span><span class="p">;</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> 	<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="lineno"> 6</span>   		<span class="c1">// Create a new Isolate and make it the current one.</span>
+<span class="lineno"> 7</span>   		<span class="n">Isolate</span><span class="o">*</span> <span class="n">isolate</span> <span class="o">=</span> <span class="n">Isolate</span><span class="o">::</span><span class="n">New</span><span class="p">();</span>
+<span class="lineno"> 8</span>   		<span class="n">Isolate</span><span class="o">::</span><span class="n">Scope</span> <span class="n">isolate_scope</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span>   		<span class="c1">// Create a stack-allocated handle scope.</span>
+<span class="lineno">11</span>   		<span class="n">HandleScope</span> <span class="n">handle_scope</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span>   		<span class="c1">// Create a new context.</span>
+<span class="lineno">14</span>   		<span class="n">Local</span><span class="o">&lt;</span><span class="n">Context</span><span class="o">&gt;</span> <span class="n">context</span> <span class="o">=</span> <span class="n">Context</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span>  		<span class="c1">// Enter the context for compiling and running the hello world script.</span>
+<span class="lineno">17</span>   		<span class="n">Context</span><span class="o">::</span><span class="n">Scope</span> <span class="n">context_scope</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span>   		<span class="c1">// Create a string containing the JavaScript source code.</span>
+<span class="lineno">20</span>   		<span class="n">Local</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">source</span> <span class="o">=</span> <span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="s">&quot;&#39;Hello&#39; + &#39;, World!&#39;&quot;</span><span class="p">);</span>
+<span class="lineno">21</span> 
+<span class="lineno">22</span>   		<span class="c1">// Compile the source code.</span>
+<span class="lineno">23</span>   		<span class="n">Local</span><span class="o">&lt;</span><span class="n">Script</span><span class="o">&gt;</span> <span class="n">script</span> <span class="o">=</span> <span class="n">Script</span><span class="o">::</span><span class="n">Compile</span><span class="p">(</span><span class="n">source</span><span class="p">);</span>
+<span class="lineno">24</span> 
+<span class="lineno">25</span>   		<span class="c1">// Run the script to get the result.</span>
+<span class="lineno">26</span>   		<span class="n">Local</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">script</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">();</span>
+<span class="lineno">27</span> 
+<span class="lineno">28</span>   		<span class="c1">// Convert the result to an UTF8 string and print it.</span>
+<span class="lineno">29</span>   		<span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span> <span class="n">utf8</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="lineno">30</span>   		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">utf8</span><span class="p">);</span>
+<span class="lineno">31</span>   		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno">32</span> 	<span class="p">}</span></code></pre></div>
+
+<p>编译这个文件：</p>
+
+<pre><code>g++ -I/root/sources/v8-git-mirror/include hw.cc -lv8 -lpthread -o hw
+</code></pre>
+
+<p>然后执行：</p>
+
+<pre><code>./hw
+</code></pre>
+
+<p>会输出</p>
+
+<pre><code>hello，world！
+</code></pre>
+
+<p>这样就算是使用了v8这个库了，里面的代码理解需要了解v8的基本数据结构和原理，上面例子虽然就几行代码，但五脏俱全，算是个小小的将js代码进行解释的程序了。</p>
+
+<h4 id="section-2">参考资料</h4>
+
+<pre><code>[1] https://code.google.com/p/v8-wiki/wiki/UsingGit
+[2] https://github.com/v8/v8-git-mirror
+[3] https://developers.google.com/v8/get_started
+</code></pre>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png.jpg)">
+                    <span class="hidden">dhclavie's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> dhclavie </h4>
+                    <!-- Author Bio -->
+                    <p> 
+                        上海-码农-云计算-IOS-WEB 
+                    </p>
+                </section>                
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Google V8引擎的安装和使用&amp;url=http://dhclavie.com/blog/google_v8_install"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://dhclavie.com/blog/google_v8_install"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://dhclavie.com/blog/google_v8_install"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+            
+            <!-- Disqus comments -->
+            
+            
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">dhc.la.vie</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll 
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+</body>
+</html>

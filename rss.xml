@@ -8,7 +8,16 @@
     <title>dhc.la.vie</title>
     <link>http://feeds.feedburner.com/Dhclavie</link>
     <description>Blogging about stuffs</description>
-    <pubDate>Sun, 09 Nov 2014 06:18:00 +0800</pubDate>
+    <pubDate>Mon, 10 Nov 2014 01:21:11 +0800</pubDate>
+    <item>
+      <title>Google V8引擎的安装和使用</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/google_v8_install</link>
+      <description>&lt;p&gt;最近写的一个模块需要引用Google V8这个库，下面介绍如何安装和使用。（必须翻墙）&lt;/p&gt;
+
+</description>
+      <pubDate>Mon, 10 Nov 2014 01:21:11 +0800</pubDate>
+      <dc:date>2014-11-10T01:21:11+08:00</dc:date>
+    </item>
     <item>
       <title>关于Node Buffer对象</title>
       <link>http://feeds.feedburner.com/Dhclavie/blog/node-buffer</link>
@@ -137,6 +146,6 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
       <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
       <dc:date>2013-11-10T18:18:00+08:00</dc:date>
     </item>
-    <dc:date>2014-11-09T06:18:00+08:00</dc:date>
+    <dc:date>2014-11-10T01:21:11+08:00</dc:date>
   </channel>
 </rss>
