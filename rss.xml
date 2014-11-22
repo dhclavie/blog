@@ -8,7 +8,16 @@
     <title>dhc.la.vie</title>
     <link>http://feeds.feedburner.com/Dhclavie</link>
     <description>Blogging about stuffs</description>
-    <pubDate>Mon, 10 Nov 2014 01:21:11 +0800</pubDate>
+    <pubDate>Sun, 23 Nov 2014 00:42:23 +0800</pubDate>
+    <item>
+      <title>习惯的力量</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/the_power_of_rabit_cn</link>
+      <description>&lt;p&gt;周末读了一本叫《习惯的力量》的书，整体觉得很一般，平时工作比较忙，不知不觉养成了很多坏习惯，例如衣服经常忘记洗，说白了就是懒，到周末一大堆大堆的洗衣服，做事情老拖，想改变，然后无意看见这本书，就读了下，下面记录了下觉得有启发的东西。&lt;/p&gt;
+
+</description>
+      <pubDate>Sun, 23 Nov 2014 00:42:23 +0800</pubDate>
+      <dc:date>2014-11-23T00:42:23+08:00</dc:date>
+    </item>
     <item>
       <title>Google V8引擎的安装和使用</title>
       <link>http://feeds.feedburner.com/Dhclavie/blog/google_v8_install</link>
@@ -146,6 +155,6 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
       <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
       <dc:date>2013-11-10T18:18:00+08:00</dc:date>
     </item>
-    <dc:date>2014-11-10T01:21:11+08:00</dc:date>
+    <dc:date>2014-11-23T00:42:23+08:00</dc:date>
   </channel>
 </rss>

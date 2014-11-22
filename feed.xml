@@ -5,9 +5,67 @@
     <description>Blogging about stuffs</description>
     <link>http://feeds.feedburner.com/Dhclavie//</link>
     <atom:link href="http://feeds.feedburner.com/Dhclavie//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Nov 2014 17:23:36 +0800</pubDate>
-    <lastBuildDate>Sun, 09 Nov 2014 17:23:36 +0800</lastBuildDate>
+    <pubDate>Sat, 22 Nov 2014 16:47:03 +0800</pubDate>
+    <lastBuildDate>Sat, 22 Nov 2014 16:47:03 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>习惯的力量</title>
+        <description>&lt;p&gt;周末读了一本叫《习惯的力量》的书，整体觉得很一般，平时工作比较忙，不知不觉养成了很多坏习惯，例如衣服经常忘记洗，说白了就是懒，到周末一大堆大堆的洗衣服，做事情老拖，想改变，然后无意看见这本书，就读了下，下面记录了下觉得有启发的东西。&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;个人习惯&lt;/h4&gt;
+
+&lt;p&gt;习惯改变性格，性格改变人生，成功的人生，都从一个好习惯开始。&lt;/p&gt;
+
+&lt;p&gt;渴求驱动习惯。&lt;/p&gt;
+
+&lt;p&gt;适当的奖赏可以让行为持续进行成为习惯。&lt;/p&gt;
+
+&lt;p&gt;如果你想减肥，就应该了解自己的习惯，看看为什么每天休息时，自己都会去办公室找点吃的。&lt;/p&gt;
+
+&lt;p&gt;如果想改变一个习惯，你必须找另一个惯常行为替代，而且当你和一个群体一起努力时，改变的成功性会大大提高，
+信仰是必要的，而且它是在群体中培养出来，即使群体只有2个人，结果也是一样的。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;组织机构的习惯&lt;/h4&gt;
+&lt;p&gt;核心习惯：最重要的习惯&lt;/p&gt;
+
+&lt;p&gt;破坏一个习惯，观察整个公司会因此连带出现什么样的变化&lt;/p&gt;
+
+&lt;p&gt;你不能命令人们去改变，人大脑并不是那样工作的，所以我决定先集中在一件事情上，如果我一开始先破坏某件事的习惯，它就会扩展到整个公司。&lt;/p&gt;
+
+&lt;p&gt;一些习惯比起其他习惯在重塑商业和生活方式上更有影响力，他们就是核心习惯。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;干货&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;全书觉得最有用的就是最后的“读者实践指南”。。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;改变可能不是很快，而且也不容易，但只要愿意付出时间去坚持，几乎所有习惯都可以改变。&lt;/p&gt;
+
+&lt;p&gt;理解框架&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.找出惯常行为
+2.用各种奖赏进行试验
+3.将暗示隔离出来
+4.制订计划
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;虽然改变习惯很难，但这个框架是一个好的开端。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;自律+坚持&lt;/h4&gt;
+
+&lt;p&gt;想要改变现在的生活，想要更加靠近自己的梦想，必须得改变自己的某些坏习惯，平时要严格自律，当然，坚持也是必须得。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Nov 2014 00:42:23 +0800</pubDate>
+        <link>http://feeds.feedburner.com/Dhclavie//blog/the_power_of_rabit_cn</link>
+        <guid isPermaLink="true">http://feeds.feedburner.com/Dhclavie//blog/the_power_of_rabit_cn</guid>
+        
+        
+        <category>post</category>
+        
+        <category>习惯</category>
+        
+      </item>
     
       <item>
         <title>Google V8引擎的安装和使用</title>
@@ -874,134 +932,6 @@ git commit -am &quot;comm内容&quot; 添加文件和commit一并完成
         <category>base</category>
         
         <category>git</category>
-        
-      </item>
-    
-      <item>
-        <title>Mysql设置Master和Slave同步</title>
-        <description>&lt;h4 id=&quot;mysql&quot;&gt;工作2年都没有自己做过mysql的主从配置，平时使用的比较多，今天有个服务要用到，就写来记录下，下面的操作基于这个环境：&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;Centos 7
-Mysql Ver 14.14 Distrib 5.1.73
-Master IP 假设为 10.10.10.1
-Slave IP 假设为 10.10.10.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;master&quot;&gt;配置Master&lt;/h3&gt;
-&lt;p&gt;#### 1.打开mysql的配置文件
-	vim /etc/mysql.my.conf&lt;/p&gt;
-
-&lt;h4 id=&quot;mysqld&quot;&gt;2.设置绑定地址，这个参数在[mysqld]下面&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;bind-address=10.10.10.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;dbidslave&quot;&gt;3.修改db服务ID，待会也需要设置slave的，必须和这里的不一样&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;sever-id = 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;binlog&quot;&gt;4.设置binlog文件的位置&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;log_bin = /var/log/mysql/mysql-bin.log
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;dbbinlog&quot;&gt;5.设置那个db要记录binlog&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;binlog_do_db = db_to_replication
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;mysqld-1&quot;&gt;6.重启mysqld&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;service mysqld restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;mysqlslaveslaveroot123&quot;&gt;7.登陆mysql,设置slave访问的权限,slave的账户也使用root,密码为123（假设）&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;GRANT REPLICATION SLAVE ON *.* TO &#39;root&#39;@&#39;10.10.10.2&#39; IDENTIFIED BY &#39;123&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;section&quot;&gt;8.进去要同步的库&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;use db_to_replication;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;dbtoreplication&quot;&gt;9.锁定db_to_replication，以免有数据进入，如果当前没有服务接入可以跳过这步。&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;FLUSH TABLES WITH READ LOCK;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;mastermysqlmariadbmysql----positionfilefilebinlogpostitonslave&quot;&gt;10.查看Master的状态（注意，mysql新版本都叫mariadb，mysql被卖了 - -!)，记录position和file，等下会用到，其实这里的file为binlog文件，postiton为slave要开始执行同步的位置。&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;MariaDB [db_to_replication]&amp;gt; show master status;
-+------------------+----------+--------------+------------------+
-| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
-+------------------+----------+--------------+------------------+
-| mysql-bin.000002 | 1234     | db_to_replication|              |
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;masterslave&quot;&gt;11.导出Master要同步的库，等下Slave需要用到。&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;mysqldump -u root -p --opt db_to_replication &amp;gt; db_to_replication.sql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;dbtoreplication8&quot;&gt;12.恢复db_to_replication，如果刚才没有执行第8步，那这里就不需要恢复了&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;UNLOCK TABLES;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;master-1&quot;&gt;13.退出，Master配置完成。&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;quit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;slave&quot;&gt;设置Slave&lt;/h3&gt;
-&lt;p&gt;#### 1.创建db_to_replication库
-	create database db_to_replication;&lt;/p&gt;
-
-&lt;h4 id=&quot;masterdbtoreplication&quot;&gt;2.导入上面在Master导出的db_to_replication库&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;mysql -u root -p db_to_replication &amp;lt; /path/to/db_to_replication.sql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;mysql-1&quot;&gt;3.打开mysql的配置文件&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;vim /etc/mysql.my.conf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;dbidmaster&quot;&gt;4.修改db服务ID,要和Master不一样&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;sever-id = 2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;binlog-1&quot;&gt;5.binlog的日志的位置&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;relay-log = /var/log/mysql/mysql-relay-bin.log
-log_bin = /var/log/mysql/mysql-bin.log
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;dbbinlog-1&quot;&gt;6.设置那个db要记录binlog&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;binlog_do_db = db_to_replication
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;relay&quot;&gt;7.relay相关文件位置&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;relay_log = /var/lib/mysql/mysql-relay-bin
-relay-log-index = /var/lib/mysql/relay-bin.index
-relay-log-info-file = /var/lib/mysql/relay-bin.info
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;mysql-2&quot;&gt;8.重启mysql服务&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;service mysqld restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;mysqlmasterbinlogroot456logmaster10&quot;&gt;9.进入mysql，设置Master的信息,假设发送binlog的用户为root，密码为456，log文件名和开始同步的位置为设置Master中第10步记录的。&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;CHANGE MASTER TO MASTER_HOST=&#39;10.10.10.1&#39;,MASTER_USER=&#39;root&#39;,
-MASTER_PASSWORD=&#39;456&#39;,MASTER_LOG_FILE=&#39;mysql-bin.000002&#39;, MASTER_LOG_POS=1234;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;slave-1&quot;&gt;10.开启Slave&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;START SLAVE;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;masterslave-1&quot;&gt;现在往Master插入一条数据就会发生同步到Slave，其他修改也是。&lt;/h3&gt;
-</description>
-        <pubDate>Wed, 24 Sep 2014 07:46:33 +0800</pubDate>
-        <link>http://feeds.feedburner.com/Dhclavie//blog/mysql-master-slave</link>
-        <guid isPermaLink="true">http://feeds.feedburner.com/Dhclavie//blog/mysql-master-slave</guid>
-        
-        
-        <category>post</category>
-        
-        <category>mysql</category>
-        
-        <category>master</category>
-        
-        <category>slave</category>
-        
-        <category>replication</category>
         
       </item>
     
