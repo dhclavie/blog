@@ -8,7 +8,24 @@
     <title>dhc.la.vie</title>
     <link>http://feeds.feedburner.com/Dhclavie</link>
     <description>Blogging about stuffs</description>
-    <pubDate>Sun, 11 Jan 2015 04:59:12 +0800</pubDate>
+    <pubDate>Sun, 01 Mar 2015 19:37:33 +0800</pubDate>
+    <item>
+      <title>搬家</title>
+      <link>http://feeds.feedburner.com/Dhclavie/blog/moved_house</link>
+      <description>&lt;p&gt;搬家后就回家过年了，还没来得及写blog记录下搬家的一些心得和经验，前几天从广东回到上海，今天刚好有时间，就由了这个blog。
+之前一直住在五角场，和一个室友，同事广东人，很和谐，虽然是老房子，但住的很舒服哈，那小子回广东发展，去鹅厂了，因此我就只能另找房子了，找的时间，有三个方案：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1）再找一个室友，把空出来的房间租出去，这样我就轻松很多，无需搬家，无需改变生活习惯。
+2）重新找房子，要找一居室，因为了解自己个性，不喜欢和别人合住，爱自由，不想受约束，当然，租金都使自己承担，压力会上升。
+3）重新找房子，和别人合租。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;也因为有上面几个方案摇摆不定，导致后面时间非常紧张，因为条件放宽了，而且，本质还是没有了解自己到底需要什么样的房子。&lt;/p&gt;
+
+</description>
+      <pubDate>Sun, 01 Mar 2015 19:37:33 +0800</pubDate>
+      <dc:date>2015-03-01T19:37:33+08:00</dc:date>
+    </item>
     <item>
       <title>30岁前的每一天</title>
       <link>http://feeds.feedburner.com/Dhclavie/blog/before_30_years_old</link>
@@ -165,6 +182,6 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
       <pubDate>Sun, 10 Nov 2013 18:18:00 +0800</pubDate>
       <dc:date>2013-11-10T18:18:00+08:00</dc:date>
     </item>
-    <dc:date>2015-01-11T04:59:12+08:00</dc:date>
+    <dc:date>2015-03-01T19:37:33+08:00</dc:date>
   </channel>
 </rss>

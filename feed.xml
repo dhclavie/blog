@@ -5,9 +5,48 @@
     <description>Blogging about stuffs</description>
     <link>http://feeds.feedburner.com/Dhclavie//</link>
     <atom:link href="http://feeds.feedburner.com/Dhclavie//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 10 Jan 2015 21:00:05 +0800</pubDate>
-    <lastBuildDate>Sat, 10 Jan 2015 21:00:05 +0800</lastBuildDate>
+    <pubDate>Sun, 01 Mar 2015 23:42:58 +0800</pubDate>
+    <lastBuildDate>Sun, 01 Mar 2015 23:42:58 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>搬家</title>
+        <description>&lt;p&gt;搬家后就回家过年了，还没来得及写blog记录下搬家的一些心得和经验，前几天从广东回到上海，今天刚好有时间，就由了这个blog。
+之前一直住在五角场，和一个室友，同事广东人，很和谐，虽然是老房子，但住的很舒服哈，那小子回广东发展，去鹅厂了，因此我就只能另找房子了，找的时间，有三个方案：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1）再找一个室友，把空出来的房间租出去，这样我就轻松很多，无需搬家，无需改变生活习惯。
+2）重新找房子，要找一居室，因为了解自己个性，不喜欢和别人合住，爱自由，不想受约束，当然，租金都使自己承担，压力会上升。
+3）重新找房子，和别人合租。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;也因为有上面几个方案摇摆不定，导致后面时间非常紧张，因为条件放宽了，而且，本质还是没有了解自己到底需要什么样的房子。&lt;/p&gt;
+
+&lt;p&gt;最后在世纪公园附近租了一个房间，和别人合住的。
+&lt;img src=&quot;http://feeds.feedburner.com/Dhclavie/images/moved_house.jpg&quot; alt=&quot;moved_house&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;经过这次找房子的经历，下次找房子的时间（- -！，看来必须得尽快赚够钱买房子！！！）必须先列出自己需要的房子的条件，然后根据这些条件去过滤和找房子，具体有下面几个哈：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1）公园或者游泳馆附近（可以锻炼）
+2）进地铁站，方便去上班或者其他地方
+3）附近有超市或者菜市场，方便买菜
+4）房子装修，合住多少人，多少个卫生间
+5）每个月租金，水电煤费怎么算，网络费怎么算，是否需要交管理费
+6）是否允许带菇凉回家，是否有时间限制
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;所以，后面需要搬家了，在找房子的时候，必须给自己列一个清单，根据清单去找！！！&lt;/h3&gt;
+
+</description>
+        <pubDate>Sun, 01 Mar 2015 19:37:33 +0800</pubDate>
+        <link>http://feeds.feedburner.com/Dhclavie//blog/moved_house</link>
+        <guid isPermaLink="true">http://feeds.feedburner.com/Dhclavie//blog/moved_house</guid>
+        
+        
+        <category>post</category>
+        
+        <category>life</category>
+        
+      </item>
     
       <item>
         <title>30岁前的每一天</title>
@@ -815,163 +854,6 @@ to the objects this constructor produces.
         
         
         <category>post</category>
-        
-        <category>javascript</category>
-        
-      </item>
-    
-      <item>
-        <title>Node Module</title>
-        <description>&lt;p&gt;这篇文章介绍如何编写Node模块，node模块遵循commonjs标准，实现起来非常简单，下面简单实现一个maths的模块, 在macosx下编写。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vim maths.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后在maths.js里面写入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;exports.add = function(a, b) {
-	return a+b;
-}
-exports.sub = function(a, b) {
-	return a-b;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意到代码里面使用了exports导出两个函数，在node里面使用exports或者module.exports导出模块里面的功能，现在，已经完成了maths模块，下面试着使用下这个模块：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vim app.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在相同目录下创建app.js，然后写入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var maths = require(&quot;/maths.js&quot;);
-console.log(maths(1,2));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;输出：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;3 但注意到我们引入这个模块的形式指明了路径，如何才可以使用npm安装我们自己编写的模块？现在，我们创建一个maths的目录：
-
-mkdir maths
-cd maths
-mv ../maths.js index.js
-vim package.json
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在package.json里面写入下面参数：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  		&quot;name&quot;: &quot;maths&quot;,
-  		&quot;version&quot;: &quot;0.0.1&quot;,
-  		&quot;private&quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;注意version参数必须是三位的，之前我使用了2位的，模块没有包装成功，最后创建README.md文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo maths function add and sub! &amp;gt; README.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;现在，我们使用下面命令包装模块：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; ~/Project/maths/ npm pack
-	maths-0.0.1.tgz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;模块已经打包完成，下面试着用npm安装这个模块到我们的项目里面（下面创建一个项目目录，进行模块安装）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mkdir modtest
-cd modtest
-npm install ~/Project/maths/maths-0.0.1.tgz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;现在模块已经安装到我们的项目里面，可以查看一下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; ~/Project/modtest/ npm install ~/Project/maths/maths-0.0.1.tgz
-	maths@0.0.1 node_modules/maths
- ~/Project/modtest/ ls
-	node_modules
- ~/Project/modtest/ ls node_modules
-	maths
- ~/Project/modtest/ ls node_modules/maths
-	README.md    index.js     package.json
- ~/Project/modtest/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下面我们试着来使用这个模块：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;vim app.js
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;写入下面代码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var maths = require(&quot;maths&quot;);
-console.log(maths.add(1,2));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;输出：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; ~/Project/modtest/ node app.js
-	3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;简单的一个模块完成拉 ：），但看见很多别的人模块里面导出功能是使用module.exports的，我们这里使用了exports，到底这两个有什么差别？看下面的例子,编辑文件test.js：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = &quot;xxxxxxxx&quot;;
-exports.add = function(){
-	console.log(&quot;add&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;引用这个文件时：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports = &quot;xxxxxxxx&quot;;
-exports.add = function(){
-      console.log(&quot;add&quot;);
-}
-                    
- ~/Project/modtest/ node app.js
-	xxxxxxxx
-	/Users/apple/Project/modtest/app.js:4
-	test.add();
- 		 ^
-	TypeError: Object xxxxxxxx has no method &#39;add&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;导出的test对象为一个string，没有add方法，再看下面的例子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;module.exports.name = &quot;xxxxxxxx&quot;;
-exports.add = function(){
-	console.log(&quot;add&quot;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;引入这个文件时：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var test = require(&quot;./test.js&quot;);
-console.log(test.name);
-test.add();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;输出：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; ~/Project/modtest/ node app.js
-xxxxxxxx
-add
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;因此，我们可以得知，最终导出的是modul.exports上面的对象，attach在exports上面的对象最终会被attach到modul.exports上面，但前提是module.exports是一个对象。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 26 Sep 2014 19:09:08 +0800</pubDate>
-        <link>http://feeds.feedburner.com/Dhclavie//blog/node-module</link>
-        <guid isPermaLink="true">http://feeds.feedburner.com/Dhclavie//blog/node-module</guid>
-        
-        
-        <category>post</category>
-        
-        <category>node</category>
-        
-        <category>module</category>
         
         <category>javascript</category>
         
